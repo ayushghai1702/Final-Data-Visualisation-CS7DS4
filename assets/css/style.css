@@ -1,0 +1,37 @@
+html { font-size: 62.5%; } 
+body {
+				font-family: 'Open Sans', sans-serif;
+				text-align: center;
+				font-weight: 500;
+}
+			
+.title {
+font-size: 30px;
+color: rgb(255, 7, 7);
+}
+
+.subtitle {
+font-size: 14px;
+color: #232323;
+padding-bottom: 15px;
+}
+
+.geo-path {
+stroke: white;
+stroke-width: 25px;
+stroke-opacity: 1;
+fill: #C0AA91;
+fill-opacity: 1;
+}
+
+.cities,  .cityCover{
+fill: #1A818C;
+}
+
+.label{
+font-size: 25px;
+text-anchor: middle;
+fill: #707070;
+font-family: 'Poiret One', cursive;
+font-weight: 400;
+}

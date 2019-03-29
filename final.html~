@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>Suicide Data Analysis</title>
+
+    <link href="assets/css/hover_pack.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/colors/color-74c9be.css" rel="stylesheet">    
+    <link href="assets/css/animations.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    <!-- JavaScripts needed at the beginning
+    ================================================== -->
+    <script type="text/javascript" src="http://alvarez.is/demo/marco/assets/js/twitterFetcher_v10_min.js"></script>
+        
+    <!-- Main Jquery & Hover Effects. Should load first -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/hover_pack.js"></script>
+	
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+	<!-- Google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps|Macondo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant:300,400" rel="stylesheet">
+
+
+
+  </head>
+
+  <body>
+
+
+	<! ========== HEADERWRAP ==================================================================================================== 
+	=============================================================================================================================>
+    <div id="headerwrap">
+    	<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2 mt">
+					<h1 class="animation slideDown">Suicide Analytics</h1>
+    								</div>
+				
+			</div><!-- /row -->
+    	</div><!-- /container -->
+    </div> <!-- /headerwrap -->
+
+	<! ========== BLOG POSTS ==================================================================================================== 
+	=============================================================================================================================>    
+<div id="cta01">
+    	<div class="container" >
+    		<div class="row">
+    			<div class="col-lg-7 col-lg-offset-3">
+    				<h2> About 800000 people commit suicide worldwide every year,<br/>of these 17% are residents of India</h2>
+    				<!--<button type="button" class="btn btn-cta btn-lg">LEARN MORE</button>-->
+    			</div>
+    		</div><!-- /row -->
+    	</div><!-- /container -->
+    </div><! --/cta01 -->
+
+	<div class="container" style='background-color:white' >	
+
+					<div class="col-lg-5 col-lg-offset-3">
+				<h3 id="lotr-title" style="color:black;">What Is Happening?</h3>
+				<hr>
+			</div>
+
+	
+
+	
+
+<div id="chartContainer" >
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+	<script src="assets/js/scatter.js"></script>
+</div>
+	   <div>
+				<h4>Union Territories like Puducherry, Andaman & Nicobar have high suicide rate but less number of total suicide incidents. Among states, Sikkim has the highest suicide rate. </h4>
+							</div>
+	</div><!-- /container -->
+	
+	<! ========== CALL TO ACTION 1 ============================================================================================== 
+	=============================================================================================================================>    
+<div id="black">
+		<div class="container">
+			<div class="row mt centered">
+				<div class="col-lg-8 col-lg-offset-2">
+		<center>			<h3 id="lotr-title"> The 3 Ws: <span class="MiddleEarth">Who, Where and Why?</span>
+</h3><hr></center>
+				</div><!-- /col-lg-4 -->
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /black -->
+
+<div style='background:white'>
+
+<iframe src='carousel2.html' class='Iframe1'></iframe>
+</div>
+    
+<div id="cta02">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-10 col-lg-offset-1">
+    				<p style="color:black,font-weight: 200; font-size:18px " ><b>MORE HOUSEWIVES COMMITTING SUICIDE !!!</b> 
+Maximum number of people committing suicides were housewives followed by those in farming/agricultural activities.
+Overall, one of the major causes of suicide has been reported to be FAMILY PROBLEMS. It is especially higher in the four Southern states. Other major causes of suicide have been mental illness and other prolonged illness.
+Top means to commit suicide are hanging and consuming poison. </p>
+    				 </div>
+    		</div><!-- /row -->
+    	</div><!-- /container -->
+    </div><! --/cta02 -->
+
+<div id="neha" style="background-color:white">
+<div class='tableauPlaceholder' id='viz1524414828958' style='position: relative;background-color:white' align="center"><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SuicideAnalysisByCause&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SuicideAnalysisByCause&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SuicideAnalysisByCause&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1524414828958');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.maxWidth='850px';vizElement.style.height=(divElement.offsetWidth*0.5)+'px';vizElement.style.maxHeight='987px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</div>	
+
+
+<div id="cta03">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-4 col-lg-offset-7">
+    				<h3 style="color:black,font-weight: 200; font-size:24px" >Chances of males commtiting suicide are higher. In the year 2012, the male to female suicide ratio was 1.9 : 1.</h3>
+    				 </div>
+    		</div><!-- /row -->
+    	</div><!-- /container -->
+    </div><! --/cta03 -->
+
+
+
+	<! ========== PORTFOLIO SECTION ============================================================================================= 
+	=============================================================================================================================>    
+	<div class="container">
+		<br>
+<br>
+<div id="meghana">
+	<!-- Google fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+				<!-- Google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps|Macondo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant:300,400" rel="stylesheet">
+		
+		<!-- Styling -->
+		<link href="assets/css/style.css" rel="stylesheet">
+		<div class="title">Countries with highest Female Suicide rates in the World</div>
+		<div class="subtitle">sized to suicide rate</div>			<div id="chart">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+	
+		<script src="assets/js/countriesMap.js"></script>
+		<script src="assets/js/suicides.js"></script>
+
+		<script src="assets/js/Gooey_script.js"></script>
+		</div>
+
+</div>
+
+					</div><!-- /container -->
+
+
+
+<div id="megh2" style="height: 600px;"> <div class='tableauPlaceholder' id='viz1524414493865' style='position: relative;background-color:white' align="center"><noscript><a href='#'><img alt='What does Google say? Search Terms:Suicide &amp; Depression ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleTrendsForSuicideAnalysis&#47;Sheet2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='GoogleTrendsForSuicideAnalysis&#47;Sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleTrendsForSuicideAnalysis&#47;Sheet2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1524414493865');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.5)+'px';vizElement.style.maxHeight='987px';                                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</div>
+
+<div id="cta01">
+		<div class="container">
+						<div class="row mt">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h3 style="color:white;">Mental health education and resources for dealing with symptoms of mental health should be taught and promoted from an early age. Doing so will provide an avenue for the maintenance of dignity and help-seeking behavior</h3>
+				</div><! --/col-lg-8 -->
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /black -->
+
+	<! ========== BRANDS & CLIENTS =============================================================================================== 
+	=============================================================================================================================>    
+	<div id="grey">
+		<div class="container">
+			<div class="row mt centered ">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h2>Mental Health Infrastructure Comparison</h2>
+					<hr>
+				</div><!-- /col-lg-4 -->
+			</div><!-- /row -->
+	<!-- RADAR CHART -->
+<div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="assets/js/RadarChart.js"></script>
+<script src="assets/css/radar-style.css"></script>
+<div id="radar-body">
+      <div id="radar-chart"></div>
+</div>
+    
+<script type="text/javascript" src="assets/js/script.js"></script>
+
+</div>
+<!--  RADAR CHART COMPLETE -->
+		
+					</div><!-- /container -->
+	</div><!-- /grey -->
+
+	
+	<! ========== BLACK SECTION ================================================================================================= 
+	=============================================================================================================================>    
+	<div id="cta04">
+		<div class="container">
+						<div class="row mt">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p style="color:white;font-size:18px;"><b>Other countries with lower suicide rate than India have significantly higher mental health expenditure, more psychiatrists & psychologists  working and more mental health hospitals. 
+The data about these normalised parameters of various countries was acquired from the Global Health Observatory data repository of World Health Organisation (WHO). </p>
+<br>
+<p style='color:white;font-size:18px;'><b>
+    Government should invest more in mental health expenditure, 
+Train more psychologists & psychiatrists,
+Build more mental health hospitals to reduce the suicide rate.</b>
+</p>
+				</div><! --/col-lg-8 -->
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /black -->
+
+
+
+	
+	<! ========== CALL TO ACTION 2 ============================================================================================== 
+	=============================================================================================================================>    
+		
+	<! ========== TESTIMONIAL CAROUSEL ========================================================================================== 
+	=============================================================================================================================>    
+
+		
+	<! ========== FOOTER ======================================================================================================== 
+	=============================================================================================================================>    
+	
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/retina.js"></script>
+
+
+  	<script>
+		$(window).scroll(function() {
+			$('.si').each(function(){
+			var imagePos = $(this).offset().top;
+	
+			var topOfWindow = $(window).scrollTop();
+				if (imagePos < topOfWindow+400) {
+					$(this).addClass("slideUp");
+				}
+			});
+		});
+	</script>    
+
+
+
+  
+  </body>
+</html>
