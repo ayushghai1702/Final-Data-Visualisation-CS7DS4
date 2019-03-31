@@ -1,13 +1,6 @@
-/*
- * Author: Carlos Alvarez
- * URL: http://alvarez.is
- *
- * Project Name: MARCO - One Page Bootstrap 3 Theme
- * Version: 1.0
- * URL: http://blacktie.co
- */
+
  
-/* FONTS */
+
 @import url(http://fonts.googleapis.com/css?family=ZCOOL+XiaoWei:400,900,700);
 
 /* OVERALL ASPECT */
@@ -93,8 +86,6 @@ border-bottom-width: 0px;
 }
 /* ================== BASIC CONFIGURATION ================== */
 
-.
-}
 /* margin top & Bottom */
 .mt {
 	margin-top: 50px;
@@ -431,8 +422,8 @@ p.capitalize:first-letter {
 }
 
 .MiddleEarth {
-	font-family: 'Macondo', cursive;
-	color: #dcaa18;
+	font-family: 'Cormorant';
+	color: #92e0ff;
 }
 
 
@@ -499,6 +490,8 @@ p.capitalize:first-letter {
 
 
 #cta02 {
+	
+	cta04;
 	background: url(../img/cta/suicide.jpg) no-repeat center top;
 	margin-top: 0px;
 	padding-top:50px;
@@ -514,7 +507,7 @@ p.capitalize:first-letter {
     background-size: 100%;
 
     -webkit-background-size: cover;
-    -moz-background-size: cover;
+    -moz-backgroucta04nd-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
@@ -526,26 +519,6 @@ p.capitalize:first-letter {
 }
 
 
-#cta03 {
-	background: url(../img/cta/images.jpg) no-repeat center top;
-	margin-top: 0px;
-	padding-top:50px;
-	text-align:center;
-	background-attachment: relative;
-	background-position: center center;
-	min-height: 250px;
-	width: 100%;
-	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 
 #cta04 {
 	background: url(../img/cta/help.jpg) no-repeat center top;
@@ -566,160 +539,8 @@ p.capitalize:first-letter {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
+}}
 
 
-
-#cta03 h2 {
-	color: white;
-	font-weight: 700;
-	margin-bottom: 50px;
-}
-
-#cta03 i {
-	color: white;
-	font-size: 45px;
-}
-
-#cta03 p {
-	color: black;
-	font-size: 16px;
-}
-
-#cta-bar {
-	background: #2f2f2f;
-	color: white;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	
-    -webkit-transition: color 0.3s ease-in, background 0.3s ease-in;
-    -moz-transition: color 0.3s ease-in, background 0.3s ease-in;
-    -ms-transition: color 0.3s ease-in, background 0.3s ease-in;
-    -o-transition: color 0.3s ease-in, background 0.3s ease-in;
-    transition: color 0.3s ease-in, background 0.3s ease-in;
-}
-
-#cta-bar:before,
-#cta-bar:after {
-    -webkit-transition: color 0.2s ease-in, background 0.2s ease-in;
-    -moz-transition: color 0.2s ease-in, background 0.2s ease-in;
-    -ms-transition: color 0.2s ease-in, background 0.2s ease-in;
-    -o-transition: color 0.2s ease-in, background 0.2s ease-in;
-    transition: color 0.2s ease-in, background 0.2s ease-in;
-    
-    cursor: pointer;
-}
-
-#cta-bar h4 {
-	color: white;
-	font-weight: 400;
-}
-
-
-/* ================== TEAM MEMBERS INFORMATION OVER iMAGE ================== */
-.members {
-  width: 302px;
-  position: relative;
-  float: left;
-  margin: 0 20px 0 0;
-  > img {
-    display: block;
-    position: relative;
-  }
-}
-
-.team-info {
-  position: absolute;
-  bottom: 20px;
-  right: 0px;
-  width: 170px;
-  padding: 10px 10px 30px 10px;
-}
-.subhead {
-  color: #f2f2f2;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-.team-name {
-  color: white;
-  font-weight: 400;
-  margin: 0;
-  letter-spacing: -1px;
-}
-
-.team-description {
-	color: white;
-	padding-top: 20px;
-}
-
-.team-description i {
-	margin: 8px;
-}
-
-/* Team Member Stats Icons Conf */
-.team-stat i {
-	font-size: 28px;
-}
-
-/* ================== TWITTER FEED CONFIGURATION ================== */
-#f ul {
-	-webkit-margin-before: 0px;
-	-webkit-margin-after: 0px;
-	-webkit-margin-start: 0px;
-	-webkit-margin-end: 0px;
-	-webkit-padding-start: 0px;
-}
-
-#f ul li {
-  list-style:none;
-  overflow:hidden;
-}
-
-#f ul li:before {
-	content: "\f099";
-	font-family: 'FontAwesome';
-	font-weight: normal;
-	font-style: normal;
-	text-decoration: inherit;
-	font-size: 16px;
-	height: auto;
-	margin-top: 2px;
-	margin-right: 8px;
-	color: white;
-	float: left;
-}
-
-#f .tweet {
-	float: right;
-	width: 85%;
-}
-
-
-
-
-
-@media (max-width: 600px) { 
-
-#headerwrap h1 {
-	font-size: 35px;
-}
-
-#cta03 {
-	background: #2d2d2d;
-	}	
-	
-#wv {
-	height: 350px;
-}
-	
-}
-
-@media (max-width: 900px) { 
-
-
-#cta03 {
-	background: #2d2d2d;
-	}	
-}
 
 
