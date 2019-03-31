@@ -24,14 +24,11 @@
 			///////////////////////////// Create filter ///////////////////////////////
 			///////////////////////////////////////////////////////////////////////////	
 
-			//SVG filter for the gooey effect
-			//Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
-			var defs = svg.append("defs");
+						var defs = svg.append("defs");
 			var filter = defs.append("filter").attr("id","gooeyCodeFilter");
 			filter.append("feGaussianBlur")
 				.attr("in","SourceGraphic")
 				.attr("stdDeviation","10")
-				//to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
 				.attr("color-interpolation-filters","sRGB") 
 				.attr("result","blur");
 			filter.append("feColorMatrix")
