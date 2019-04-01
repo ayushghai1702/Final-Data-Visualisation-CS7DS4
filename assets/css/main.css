@@ -3,7 +3,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=ZCOOL+XiaoWei:400,900,700);
 
-/* OVERALL ASPECT */
+
 
 body {
     background-color: #f2f2f2;
@@ -17,7 +17,7 @@ body {
     
 }
 
-/* Titles */
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'ZCOOL+XiaoWei', sans-serif;
     font-weight: 900;
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Paragraph & Typographic */
+
 p {
     line-height: 28px;
     margin-bottom: 25px;
@@ -39,7 +39,6 @@ p {
 	text-align: left;
 }
 
-/* Links */
 a {
     word-wrap: break-word;
 
@@ -84,21 +83,17 @@ a:after {
 border-width: 0 0 0px;
 border-bottom-width: 0px;
 }
-/* ================== BASIC CONFIGURATION ================== */
 
-/* margin top & Bottom */
 .mt {
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
-/* Special Margin for Wrap sections */
 .mts {
 	margin-top: -20px;
 }
 
 
-/* service icons */
 .si {
 	visibility: hidden;
 }
@@ -112,13 +107,11 @@ border-bottom-width: 0px;
 	padding: 20px;
 }
 
-/* Padding top & bottom */
 .pt {
 	padding-top: 15px;
 	padding-bottom: 15px; 
 }
 
-/* Description Styling / Used in portfolio & Blog images footnotes */
 .desc p {
 	font-family: 'ZCOOL+XiaoWei', sans-serif;
 	font-size: 16px;
@@ -158,7 +151,6 @@ border-bottom-width: 0px;
 }
 
 
-/* Dashed Separator */
 
 hr-d {
     display: block;
@@ -187,7 +179,6 @@ p.capitalize:first-letter {
 }
 
 
-/* Button Call To Action */
 .btn-cta {
   color: #ffffff;
   background-color: transparent;
@@ -208,7 +199,6 @@ p.capitalize:first-letter {
   border-color: #2f2f2f;
 }
 
-/* Button Theme */
 .btn-theme {
   color: #ffffff;
   background-color: transparent;
@@ -229,7 +219,6 @@ p.capitalize:first-letter {
   border-color: #2f2f2f;
 }
 
-/* Button Yellow */
 .btn-yellow {
   color: #2f2f2f;
   background-color: #ffd56c;
@@ -257,7 +246,6 @@ p.capitalize:first-letter {
 	overflow:none;
 }
 
-/***** Testimonials Styling *****/
 .testi-container {
 	width:100%;
 	margin-bottom:14px;
@@ -313,7 +301,6 @@ p.capitalize:first-letter {
 	font-weight: 400;
 }
 
-/* ================== MAIN WRAP SECTIONS ================== */
 
 #headerwrap {
 	background: url(../img/bg01.jpg) no-repeat center top;
@@ -357,7 +344,6 @@ p.capitalize:first-letter {
 
 
 
-/* Footer Wrap */
 
 #f {
 	background-color: #1b1b1b;
@@ -373,7 +359,6 @@ p.capitalize:first-letter {
 	color: white;
 }
 
-/* Color Wraps */
 #white {
 	margin-top: 0px;
 	background-color: #ffffff;
@@ -436,7 +421,6 @@ p.capitalize:first-letter {
 	font-size: 70px;
 }
 
-/* Map Wrap*/
 
 #map {
 	width: 100%;
@@ -448,7 +432,6 @@ p.capitalize:first-letter {
 	height: 650px;
 }
 
-/* ================== CALL TO ACTION WRAP SECTIONS & HELPERS ================== */
 #cta01 {
 	background: url(../img/cta/cta01.jpg) no-repeat center top;
 	margin-top: 0px;
