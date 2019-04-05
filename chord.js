@@ -52,7 +52,6 @@
 				reverseOrder = false,
 				approxCenter;
 
-			//Loop over the outer groups and sum the values
 			k = 0;
 			numSubGroups = 0;
 			for(i = 0; i < n; i++) {
@@ -67,7 +66,6 @@
 				k += sum;	
 			}//for i
 		
-			// Sort the groups…
 			if (sortGroups) 
 				groupIndex.sort(function(a, b) { return sortGroups(groupSums[a], groupSums[b]); });
 
@@ -77,8 +75,6 @@
 					d.sort(function(a, b) { return sortSubgroups( inner(data[i].values[a]), inner(data[i].values[b]) ); });
 				});
 					
-			//After which group are we past the center
-			//TODO: make something for if there is no nice split in two...
 			l = 0;
 			for(i = 0; i < n; i++) {
 				l += groupSums[groupIndex[i]];
@@ -88,16 +84,12 @@
 				}//if
 			}//for i
 		
-			//How much should be added to k to make the empty part emptyPerc big of the total
 			emptyk = k * emptyPerc / (1 - emptyPerc);
 			k += emptyk;
 
-			// Convert the sum to scaling factor for [0, 2pi].
 			k = max$1(0, tau$3 - padAngle * n) / k;
 			dx = k ? padAngle : tau$3 / n;
 	  
-			// Compute the start and end angle for each group and subgroup.
-			// Note: Opera has a bug reordering object literal properties!
 			subgroups = new Array(numSubGroups);
 			x = emptyk * 0.25 * k; //quarter of the empty part //0;
 			counter = 0;
@@ -109,7 +101,7 @@
 					x = x + emptyk * 0.5 * k; 
 				}//if
 				x0 = x;
-				//If you've crossed the bottom, reverse the order of the inner strings
+
 				if(x > pi$3) reverseOrder = true;
 				s = subgroupIndex[di].length;
 				for(j = 0; j < s; j++) {
@@ -128,8 +120,8 @@
 							innername: innername
 						};
 					
-					//Check and save the unique inner names
-					if( !uniqueCheck[innername] ) {
+
+						if( !uniqueCheck[innername] ) {
 						uniqueCheck[innername] = true;
 						uniqueInner.push({name: innername});
 					}//if
@@ -146,11 +138,11 @@
 				x += dx;		
 			}//for i
 
-			//Sort the inner groups in the same way as the strings
+
 			uniqueInner.sort(function(a, b) { return sortSubgroups( a.name, b.name ); });
 		
-			//Find x and y locations of the inner categories
-			//TODO: make x depend on length of inner name	
+
+
 			m = uniqueInner.length
 			for(i = 0; i < m; i++) {
 				uniqueInner[i].x = 0;
@@ -158,7 +150,7 @@
 				uniqueInner[i].offset = widthInner(uniqueInner[i].name, i, uniqueInner);
 			}//for i
 	  			
-			//Generate bands for each (non-empty) subgroup-subgroup link
+
 			counter = 0;
 			for(i = 0; i < n; i++) {
 				var di = groupIndex[i];
@@ -166,7 +158,7 @@
 				for(j = 0; j < s; j++) {
 					var outerGroup = subgroups[counter];
 					var innerTerm = outerGroup.innername;
-					//Find the correct inner object based on the name
+
 					var innerGroup = searchTerm(innerTerm, "name", uniqueInner);
 					if (outerGroup.value) {
 						looms.push({inner: innerGroup, outer: outerGroup});
@@ -282,31 +274,27 @@
 				leftHalf,
 				pulloutContext;
 			
-			//Does the group lie on the left side
-			leftHalf = sa0+halfPi$2 > pi$3 && sa0+halfPi$2 < tau$3;
-			//If the group lies on the other side, switch the inner point offset
-			if(leftHalf) toffset = -toffset;
+
+				leftHalf = sa0+halfPi$2 > pi$3 && sa0+halfPi$2 < tau$3;
+
+				if(leftHalf) toffset = -toffset;
 			tx = tx + toffset;
-			//And the height of the end point
+
 			theight = leftHalf ? -thicknessInner : thicknessInner;
 			
 
 			if (!context) context = buffer = d3.path();
 
-			//Change the pullout based on where the string is
+
 			pulloutContext  = (leftHalf ? -1 : 1 ) * pullout;
 			sx0 = sx0 + pulloutContext;
 			sx1 = sx1 + pulloutContext;
 			
-			//Start at smallest angle of outer arc
 			context.moveTo(sx0, sy0);
-			//Circular part along the outer arc
 			context.arc(pulloutContext, 0, sr, sa0, sa1);
-			//From end outer arc to center (taking into account the pullout)
 			xco = d3.interpolateNumber(pulloutContext, sx1)(0.5);
 			yco = d3.interpolateNumber(0, sy1)(0.5);
 			if( (!leftHalf && sx1 < tx) || (leftHalf && sx1 > tx) ) {
-				//If the outer point lies closer to the center than the inner point
 				xci = tx + (tx - sx1)/2;
 				yci = d3.interpolateNumber(ty + theight/2, sy1)(0.5);
 			} else {
@@ -314,13 +302,10 @@
 				yci = ty + theight/2;
 			}//else
 			context.bezierCurveTo(xco, yco, xci, yci, tx, ty + theight/2);
-			//Draw a straight line up/down (depending on the side of the circle)
 			context.lineTo(tx, ty - theight/2);
-			//From center (taking into account the pullout) to start of outer arc
 			xco = d3.interpolateNumber(pulloutContext, sx0)(0.5);
 			yco = d3.interpolateNumber(0, sy0)(0.5);
 			if( (!leftHalf && sx0 < tx) || (leftHalf && sx0 > tx) ) { 
-				//If the outer point lies closer to the center than the inner point
 				xci = tx + (tx - sx0)/2;
 				yci = d3.interpolateNumber(ty - theight/2, sy0)(0.5);
 			} else {

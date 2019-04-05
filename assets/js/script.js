@@ -53,8 +53,6 @@ var mycfg = {
   ExtraWidthX: 300
 }
 
-//Call function to draw the Radar chart
-//Will expect that data is in %'s
 RadarChart.draw("#radar-chart", d, mycfg);
 
 var svg = d3.select('#radar-body')
@@ -63,7 +61,6 @@ var svg = d3.select('#radar-body')
 	.attr("width", w+300)
 	.attr("height", h)
 
-//Create the title for the legend
 var text = svg.append("text")
 	.attr("class", "title")
 	.attr('transform', 'translate(90,0)') 
@@ -73,14 +70,12 @@ var text = svg.append("text")
 	.attr("fill", "#404040")
 	.text("");
 		
-//Initiate Legend	
 var legend = svg.append("g")
 	.attr("class", "legend")
 	.attr("height", 100)
 	.attr("width", 200)
 	.attr('transform', 'translate(90,20)') 
 	;
-	//Create colour squares
 	legend.selectAll('rect')
 	  .data(LegendOptions)
 	  .enter()
@@ -91,7 +86,6 @@ var legend = svg.append("g")
 	  .attr("height", 10)
 	  .style("fill", function(d, i){ return colorscale(i);})
 	  ;
-	//Create text next to squares
 	legend.selectAll('text')
 	  .data(LegendOptions)
 	  .enter()

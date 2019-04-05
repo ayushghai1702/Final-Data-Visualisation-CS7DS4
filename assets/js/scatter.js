@@ -105,7 +105,7 @@
 
           bubbles.draw();
 
-          //
+   
           bubbles.legends = [];
           
           story.storyLabel.remove();

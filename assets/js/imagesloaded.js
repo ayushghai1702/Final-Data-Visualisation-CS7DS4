@@ -1,7 +1,3 @@
-/*!
- * imagesLoaded v3.0.2
- * JavaScript is all like "You images are done yet or what?"
- */
 
 ( function( window ) {
 
@@ -11,9 +7,7 @@ var $ = window.jQuery;
 var console = window.console;
 var hasConsole = typeof console !== 'undefined';
 
-// -------------------------- helpers -------------------------- //
 
-// extend objects
 function extend( a, b ) {
   for ( var prop in b ) {
     a[ prop ] = b[ prop ];
@@ -26,25 +20,20 @@ function isArray( obj ) {
   return objToString.call( obj ) === '[object Array]';
 }
 
-// turn element or nodeList into an array
 function makeArray( obj ) {
   var ary = [];
   if ( isArray( obj ) ) {
-    // use object if already an array
     ary = obj;
   } else if ( typeof obj.length === 'number' ) {
-    // convert nodeList to array
     for ( var i=0, len = obj.length; i < len; i++ ) {
       ary.push( obj[i] );
     }
   } else {
-    // array of single index
     ary.push( obj );
   }
   return ary;
 }
 
-// --------------------------  -------------------------- //
 
 function defineImagesLoaded( EventEmitter, eventie ) {
 
@@ -79,11 +68,9 @@ function defineImagesLoaded( EventEmitter, eventie ) {
     this.getImages();
 
     if ( $ ) {
-      // add jQuery Deferred object
       this.jqDeferred = new $.Deferred();
     }
 
-    // HACK check async to allow time to bind listeners
     var _this = this;
     setTimeout( function() {
       _this.check();
@@ -263,7 +250,6 @@ function defineImagesLoaded( EventEmitter, eventie ) {
   return ImagesLoaded;
 }
 
-// -------------------------- transport -------------------------- //
 
 if ( typeof define === 'function' && define.amd ) {
   // AMD

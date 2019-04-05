@@ -75,7 +75,6 @@ a, a:link, a:visited, a:active {
 	color: #53821a;
 }
 
-/*--- chart ---*/
 
 .name-title {
 	font-family: 'Macondo Swash Caps', cursive;
@@ -95,7 +94,6 @@ a, a:link, a:visited, a:active {
 	text-anchor: middle;
 	font-size: 1.4rem;
   	fill: #232323;
-/*	font-weight: 300;*/
 }
 			
 .inner-label {

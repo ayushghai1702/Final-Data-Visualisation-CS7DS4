@@ -4,11 +4,9 @@ var margin = {left:80, top:10, right:120, bottom:150},
     innerRadius = Math.min(width * 0.43, height * .50),
     outerRadius = innerRadius * 1.05;
 	
-//Recalculate the width and height now that we know the radius
 width = outerRadius * 2 + margin.right + margin.left;
 height = outerRadius * 2 + margin.top + margin.bottom;
 	
-//Reset the overall font size
 var newFontSize = Math.min(70, Math.max(40, innerRadius * 62.5 / 250));
 d3.select("html").style("font-size", newFontSize + "%");
 
@@ -22,11 +20,9 @@ var defaultOpacity = 0.85,
 						
 var loom = d3.loom()
     .padAngle(0.05)
-	//.sortSubgroups(sortAlpha)
-	//.heightInner(28)
+
 	.emptyPerc(0.2)
 	.widthInner(20)
-	//.widthInner(function(d) { return 8 * d.length; })
 	.value(function(d) { return d.Total; })
 	.inner(function(d) { return d.State; })
 	.outer(function(d) { return d.Type; });
@@ -43,7 +39,6 @@ var string = d3.string()
 	
 	
 var characterNotes = [];
-//28 states cange
 characterNotes["Maharashtra"] = "Suicide rate of farmers is maximum in Maharashtra";
 
 
@@ -58,41 +53,32 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 
 	
 	
-	//Sort the inner characters based on the total number of words spoken
 	
-	//Find the total number of words per character
 	var dataChar = d3.nest()
 		.key(function(d) { return d.State; })
 		.rollup(function(leaves) { return d3.sum(leaves, function(d) { return d.Total; }); })
 		.entries(dataAgg)
 		.sort(function(a, b){ return d3.descending(a.value, b.value); });				
-	//Unflatten the result
 	var characterOrder = dataChar.map(function(d) { return d.key; });
-	//Sort the characters on a specific order
 	function sortCharacter(a, b) {
 	  	return characterOrder.indexOf(a) - characterOrder.indexOf(b);
 	}//sortCharacter
 	
-	//Set more loom functions
 	loom
 		.sortSubgroups(sortCharacter)
 		.heightInner(innerRadius*1.4/characterOrder.length);
 	
 
 		
-	//Color for the unique locations
-	//var Types = ['Farming/Agriculture Activity', 'House Wife', 'Professional Activity', 'Public Sector Undertaking', 'Retired Person', 'Self-employed (Business activity)','Service (Government)', 'Service (Private)', 'Student', 'Unemployed']
 	var Types=['Farmers', 'Government Service', 'House Wife', 'Private Service',
  'Professional Activity', 'Public Sector Undertaking' ,'Retired Person',
  'Self-employed', 'Student' , 'Unemployed']
 	
 	var colors = ["#5a3511", "#47635f", "#223e15", "#c17924", "#0d1e25", "#53821a", "#017FA4","#770000", "#373F41", "#602317"]
-	//,     "#8D9413",   "#c17924", "#3C7E16"];
 	var color = d3.scaleOrdinal()
     	.domain(Types)
     	.range(colors);
 	
-	//Create a group that already holds the data
 	var g = svg.append("g")
 	    .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")")
 		.datum(loom(dataAgg));	
@@ -114,11 +100,10 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 		.attr("x", 0)
 		.attr("y", -innerRadius*5/10 + 15);
 	
-	//The character pieces	
 	titles.append("text")
 		.attr("class", "character-note")
 		.attr("x", 0)
-		.attr("y", innerRadius)//by 2 earlier
+		.attr("y", innerRadius)
 		.attr("dy", "0.35em");
 
 		
@@ -136,40 +121,32 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 		})
  	 	.on("mouseover", function(d) {
 			
-			//Hide all other arcs	
 			d3.selectAll(".arc-wrapper")
 		      	.transition()
 				.style("opacity", function(s) { return s.outername === d.outername ? 1 : 0.5; });
 			
-			//Hide all other strings
 		    d3.selectAll(".string")
 		      	.transition()
 		        .style("opacity", function(s) { return s.outer.outername === d.outername ? 1 : fadeOpacity; });
 				
-			//Find the data for the strings of the hovered over location
 			var locationData = loom(dataAgg).filter(function(s) { return s.outer.outername === d.outername; });
-			//Hide the characters who haven't said a word
 			d3.selectAll(".inner-label")
 		      	.transition()
 		        .style("opacity", function(s) {
-					//Find out how many words the character said at the hovered over location
 					var char = locationData.filter(function(c) { return c.outer.innername === s.name; });
 					return char.length === 0 ? 0.1 : 1;
 				});
  	 	})
      	.on("mouseout", function(d) {
 			
-			//Sjow all arc labels
 			d3.selectAll(".arc-wrapper")
 		      	.transition()
 				.style("opacity", 1);
 			
-			//Show all strings again
 		    d3.selectAll(".string")
 		      	.transition()
 		        .style("opacity", defaultOpacity);
 				
-			//Show all characters again
 			d3.selectAll(".inner-label")
 		      	.transition()
 		        .style("opacity", 1);
@@ -186,7 +163,6 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 	
 		 
 
-	//The text needs to be rotated with the offset in the clockwise direction
 	var outerLabels = arcs.append("g")
 		.each(function(d) { d.angle = ((d.startAngle + d.endAngle) / 2); })
 		.attr("class", "outer-labels")
@@ -199,13 +175,11 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 			+ (d.angle > Math.PI ? "rotate(180)" : "")
 		})
 		
-	//The outer name
 	outerLabels.append("text")
 		.attr("class", "outer-label")
 		.attr("dy", ".35em")
 		.text(function(d,i){ return d.outername; });
 		
-	//The value below it
 	outerLabels.append("text")
 		.attr("class", "outer-label-value")
 		.attr("dy", "1.5em")
@@ -229,8 +203,6 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 		
 		
 			
-	//The text also needs to be displaced in the horizontal directions
-	//And also rotated with the offset in the clockwise direction
 	var innerLabels = g.append("g")
 		.attr("class","inner-labels")
 	  .selectAll("text")
@@ -246,18 +218,15 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 	    .text(function(d,i) { return d.name; })
  	 	.on("mouseover", function(d) {
 			
-			//Show all the strings of the highlighted character and hide all else
 		    d3.selectAll(".string")
 		      	.transition()
 		        .style("opacity", function(s) {
 					return s.outer.innername !== d.name ? fadeOpacity : 1;
 				});
 				
-			//Update the word count of the outer labels
 			var characterData = loom(dataAgg).filter(function(s) { return s.outer.innername === d.name; });
 			d3.selectAll(".outer-label-value")
 				.text(function(s,i){
-					//Find which characterData is the correct one based on location
 					var loc = characterData.filter(function(c) { return c.outer.outername === s.outername; });
 					if(loc.length === 0) {
 						var value = 0;
@@ -268,16 +237,13 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 					
 				});
 			
-			//Hide the arc where the character hasn't said a thing
 			d3.selectAll(".arc-wrapper")
 		      	.transition()
 		        .style("opacity", function(s) {
-					//Find which characterData is the correct one based on location
 					var loc = characterData.filter(function(c) { return c.outer.outername === s.outername; });
 					return loc.length === 0 ? 0.1 : 1;
 				});
 					
-			//Update the title to show the total word count of the character
 			d3.selectAll(".texts")
 				.transition()
 				.style("opacity", 1);	
@@ -289,7 +255,7 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 					return numFormat(words[0].value);
 				});
 				
-			//Show the character note
+			
 			d3.selectAll(".character-note")
 				.text(characterNotes[d.name])
 				.call(wrap, 2.25*pullOutSize);
@@ -297,21 +263,17 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 		})
      	.on("mouseout", function(d) {
 			
-			//Put the string opacity back to normal
 		    d3.selectAll(".string")
 		      	.transition()
 				.style("opacity", defaultOpacity);
 				
-			//Return the word count to what it was
 			d3.selectAll(".outer-label-value")	
 				.text(function(s,i){ return numFormat(s.value) + " suicides"; });
 				
-			//Show all arcs again
 			d3.selectAll(".arc-wrapper")
 		      	.transition()
 		        .style("opacity", 1);
 			
-			//Hide the title
 			d3.selectAll(".texts")
 				.transition()
 				.style("opacity", 0);
@@ -322,22 +284,18 @@ d3.json('professional_profile.json', function (error, dataAgg) {
 
 
 
-//Sort alphabetically
 function sortAlpha(a, b){
 	    if(a < b) return -1;
 	    if(a > b) return 1;
 	    return 0;
 }//sortAlpha
 
-//Sort on the number of words
 function sortWords(a, b){
 	    if(a.Total < b.Total) return -1;
 	    if(a.Total > b.Total) return 1;
 	    return 0;
 }//sortWords
 
-/*Taken from http://bl.ocks.org/mbostock/7555321
-//Wraps SVG text*/
 function wrap(text, width) {
   text.each(function() {
 	var text = d3.select(this),
