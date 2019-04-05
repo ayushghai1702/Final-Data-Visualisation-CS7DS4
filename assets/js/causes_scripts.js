@@ -12,9 +12,7 @@ height = outerRadius * 2 + margin.top + margin.bottom;
 var newFontSize = Math.min(70, Math.max(40, innerRadius * 62.5 / 250));
 d3.select("html").style("font-size", newFontSize + "%");
 
-////////////////////////////////////////////////////////////
-////////////////// Set-up Chord parameters /////////////////
-////////////////////////////////////////////////////////////
+
     
 var pullOutSize = 20 + 30/135 * innerRadius;
 var numFormat = d3.format(",.0f");
@@ -40,9 +38,7 @@ var string = d3.string()
     .radius(innerRadius)
     .pullout(pullOutSize);
 
-////////////////////////////////////////////////////////////
-//////////////////// Character notes ///////////////////////
-////////////////////////////////////////////////////////////
+
     
 var characterNotes = [];
 //28 states cange
@@ -75,23 +71,15 @@ characterNotes["Arunachal Pradesh"] = "Boromir speaks his finest lines during th
 characterNotes["Nagaland"] = "Although a very memorable presence throughout the movies, Legolas speaks even less in 3 movies than Boromir, who is alive in only the first movie";
 characterNotes["Manipur"] = "Although a very memorable presence throughout the movies, Legolas speaks even less in 3 movies than Boromir, who is alive in only the first movie";
 
-////////////////////////////////////////////////////////////
-////////////////////// Create SVG //////////////////////////
-////////////////////////////////////////////////////////////
+
             
 var svg = d3.select("#lotr-chart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 
-////////////////////////////////////////////////////////////
-///////////////////// Read in data /////////////////////////
-////////////////////////////////////////////////////////////
-            
 d3.json('causes.json', function (error, dataAgg) {
 
-    ////////////////////////////////////////////////////////////
-    ///////////////////// Prepare the data /////////////////////
-    ////////////////////////////////////////////////////////////
+  
     
     //Sort the inner characters based on the total number of words spoken
     
@@ -113,9 +101,7 @@ d3.json('causes.json', function (error, dataAgg) {
         .sortSubgroups(sortCharacter)
         .heightInner(innerRadius*1.4/characterOrder.length);
     
-    ////////////////////////////////////////////////////////////
-    ///////////////////////// Colors ///////////////////////////
-    ////////////////////////////////////////////////////////////
+  
                     
     //Color for the unique locations
     var Types = ['Bankruptcy or Sudden change in Economic',
@@ -143,9 +129,7 @@ d3.json('causes.json', function (error, dataAgg) {
         .attr("transform", "translate(" + (width/2 + margin.left) + "," + (height/2 + margin.top) + ")")
         .datum(loom(dataAgg));  
 
-    ////////////////////////////////////////////////////////////
-    ///////////////////// Set-up title /////////////////////////
-    ////////////////////////////////////////////////////////////
+   
 
     var titles = g.append("g")
         .attr("class", "texts")
@@ -168,9 +152,7 @@ d3.json('causes.json', function (error, dataAgg) {
         .attr("y", innerRadius)//by 2 earlier
         .attr("dy", "0.35em");
                     
-    ////////////////////////////////////////////////////////////
-    ////////////////////// Draw outer arcs /////////////////////
-    ////////////////////////////////////////////////////////////
+   
 
     var arcs = g.append("g")
         .attr("class", "arcs")
@@ -232,9 +214,7 @@ d3.json('causes.json', function (error, dataAgg) {
             return "translate(" + d.pullOutSize + ',' + 0 + ")";
          });
                             
-    ////////////////////////////////////////////////////////////
-    //////////////////// Draw outer labels /////////////////////
-    ////////////////////////////////////////////////////////////
+    
 
     //The text needs to be rotated with the offset in the clockwise direction
     var outerLabels = arcs.append("g")
@@ -261,9 +241,6 @@ d3.json('causes.json', function (error, dataAgg) {
         .attr("dy", "1.5em")
         .text(function(d,i){ return numFormat(d.value) + " suicides"; });
 
-    ////////////////////////////////////////////////////////////
-    ////////////////// Draw inner strings //////////////////////
-    ////////////////////////////////////////////////////////////
     
     var strings = g.append("g")
         .attr("class", "stringWrapper")
@@ -279,9 +256,7 @@ d3.json('causes.json', function (error, dataAgg) {
         .style("fill", function(d) { return d3.rgb( color(d.outer.outername) ).brighter(0.2) ; })
         .style("opacity", defaultOpacity);
         
-    ////////////////////////////////////////////////////////////
-    //////////////////// Draw inner labels /////////////////////
-    ////////////////////////////////////////////////////////////
+    
             
     //The text also needs to be displaced in the horizontal directions
     //And also rotated with the offset in the clockwise direction
@@ -374,9 +349,7 @@ d3.json('causes.json', function (error, dataAgg) {
             
 });//d3.csv
 
-////////////////////////////////////////////////////////////
-///////////////////// Extra functions //////////////////////
-////////////////////////////////////////////////////////////
+
 
 //Sort alphabetically
 function sortAlpha(a, b){

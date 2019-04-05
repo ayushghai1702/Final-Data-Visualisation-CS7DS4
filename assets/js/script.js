@@ -3,18 +3,9 @@ var w = 600,
 
 var colorscale = d3.scale.category10();
 
-//Legend titles
+
 var LegendOptions = ['Singapore','China','India',  'United states', 'New Zealand'];
-//var LegendOptions = ['India','China'];
-//var LegendOptions = ['India','Singapore','China'];
-/*
-{axis:"mental hospitalsx100",value: 0.002},
-		 	{axis:"psychologists workingx10",value: 0.0123},
-			{axis:"Mental Health expenditure/1000",value: 0.00414},
-			{axis:"psychiatrists workingx10",value: 0.0348},
-			{axis:"suicide rate",value: 0.0086}
-*/
-//Data
+
 
 var d = [
 		 [	{axis:"mental hospitals",value: 0.002},
@@ -53,50 +44,7 @@ var d = [
 
 		];
 
-	/*	[	
-			{axis:"Mental Health expenditure/1000",value:0.0063},
-			{axis:"psychiatrists working",value:0.01240},
-			{axis:"psychologists working",value:0.02962},
-			{axis:"mental hospitalsx100",value:0.025},
-			{axis:"suicide rate",value:0.0126}
 
-		],[	{axis:"Mental Health expenditure/1000",value: 0.01},
-			{axis:"psychiatrists working",value: 0.00976},
-			{axis:"psychologists working",value: 0.01378},
-			{axis:"mental hospitalsx100",value: 0.012},
-			{axis:"suicide rate",value: 0.0123}
-
-		]
-		  
-		];
-	
-
-/*
-var d = [
-		  [
-			{axis:"Mental Health expenditure/1000",value:0.00006},
-			{axis:"psychiatrists working",value:0.0003},
-			{axis:"psychologists working",value:0.00007},
-			{axis:"mental hospitalsx10",value: 0.00004},
-			{axis:"suicide rate/10",value: 0.0016}
-		  ],[
-			{axis:"Mental Health expenditure/1000",value: 0.00414},
-			{axis:"psychiatrists working",value: 0.00348},
-			{axis:"psychologists working",value: 0.00123},
-			{axis:"mental hospitalsx10",value: 0.0002},
-			{axis:"suicide rate/10",value: 0.00086}
-		  ],[
-			{axis:"Mental Health expenditure/1000",value:0.0025},
-			{axis:"psychiatrists working",value:0.00153},
-			{axis:"psychologists working",value:0.00018},
-			{axis:"mental hospitalsx10",value: 0.0006},
-			{axis:"suicide rate/10",value: 0.00085}
-
-		]
-		  
-		];
-*/
-//Options for the Radar chart, other than default
 var mycfg = {
   w: w,
   h: h,
@@ -108,10 +56,6 @@ var mycfg = {
 //Call function to draw the Radar chart
 //Will expect that data is in %'s
 RadarChart.draw("#radar-chart", d, mycfg);
-
-////////////////////////////////////////////
-/////////// Initiate legend ////////////////
-////////////////////////////////////////////
 
 var svg = d3.select('#radar-body')
 	.selectAll('svg')
